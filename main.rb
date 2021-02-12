@@ -2,8 +2,11 @@ require 'discordrb'
 require 'httparty'
 require 'yaml'
 require 'json'
+require 'dotenv/load'
 
-bot = Discordrb::Bot.new token: 'ODA4NDE3OTgwNTk2NjE3MjU3.YCGP6g.RGbTKM6G-ISy921Zh6MoRBVByRo', client_id: 808417980596617257
+Dotenv.load
+
+bot = Discordrb::Bot.new token: ENV['TOKEN'], client_id: ENV['CLIENT_ID']
 
 queue = Array.new
 msg = ""
